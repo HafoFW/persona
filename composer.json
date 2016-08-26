@@ -1,0 +1,13 @@
+{
+  "name": "hafo/persona",
+  "minimum-stability": "dev",
+  "description": "Hafo Framework tools for working with personal information",
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "require-dev": {
+    "nette/tester": "1.*"
+  }
+}
