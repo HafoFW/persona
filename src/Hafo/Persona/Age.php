@@ -22,4 +22,12 @@ interface Age {
      */
     function dateBorn();
 
+    /**
+     * Returns person's next birthday.
+     *
+     * @param \DateTimeInterface $since
+     * @return \DateTimeInterface
+     */
+    function nextBirthday(\DateTimeInterface $since);
+
 }

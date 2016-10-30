@@ -19,4 +19,14 @@ class HumanAge implements Age {
         return $diff->y * ($diff->invert ? -1 : 1);
     }
 
+    function nextBirthday(\DateTimeInterface $since) {
+        $born = (new \DateTime($this->dateBorn()->format(\DateTime::ISO8601)));
+
+        $birthday = $born->modify('+' . $since->format('Y') - $born->format('Y') . ' years');
+        if($birthday < $since) {
+            $birthday->modify('+1 year');
+        }
+        return $birthday;
+    }
+
 }

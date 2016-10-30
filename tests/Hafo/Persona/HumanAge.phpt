@@ -24,6 +24,14 @@ class HumanAgeTest extends TestCase {
         Assert::equal(50, $age->yearsAt((new \DateTimeImmutable)->setDate(2066, 8, 27)));
     }
 
+    function testNextBirthday() {
+        $age = new HumanAge((new \DateTimeImmutable)->setDate(2016, 8, 27));
+        
+        Assert::equal('2018-08-27', $age->nextBirthday((new \DateTimeImmutable)->setDate(2017, 8, 28))->format('Y-m-d'));
+        Assert::equal('2020-08-27', $age->nextBirthday((new \DateTimeImmutable)->setDate(2020, 8, 27))->format('Y-m-d'));
+        Assert::equal('2011-08-27', $age->nextBirthday((new \DateTimeImmutable)->setDate(2010, 8, 28))->format('Y-m-d'));
+    }
+
 }
 
 (new HumanAgeTest)->run();
