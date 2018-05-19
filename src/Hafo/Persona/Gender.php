@@ -9,5 +9,6 @@ interface Gender {
 
     const MALE = 'm';
     const FEMALE = 'f';
+    const UNKNOWN = 'u';
 
 }
